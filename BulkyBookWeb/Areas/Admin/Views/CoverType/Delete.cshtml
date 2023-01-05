@@ -1,0 +1,39 @@
+﻿@model CoverType
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Deletet</h1>
+
+<form method="post" asp-action="Delete">
+
+    <div class=" border p-3 mt-4">
+        <input asp-for="id" hidden />
+        <div asp-validation-summary="All"></div>
+        <div class="row pb-2">
+            <h2 class="text-primary">Delete CoverType</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="id"></label>
+            <input asp-for="id" class=" form-control" disabled="disabled" />
+            <span asp-validation-for="id" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class=" form-control" disabled="disabled" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+       
+        <button type="submit" class="btn btn-primary" style="width:150px">Delete</button>
+        <a asp-controller="covertype" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            back
+        </a>
+    </div>
+
+</form>
+@section scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
